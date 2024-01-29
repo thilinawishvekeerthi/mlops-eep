@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eep"
+description = "EEP is a library for predicting the properties of Company1s."
+readme = "README.md"
+requires-python = ">=3.10"
+#author="Exazyme"
+#author_email = "info@exazyme.com"
+#keywords = ["protein", "Company1", "peptide", "deep learning" "RKHS", "ML", "AI"]
+license = {text = "Proprietary"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = [
+        "markdown==3.5.1",
+        "joblib==1.3.2",
+        "openpyxl",
+        "huggingface_hub==0.19.4",
+        "google-cloud-storage==2.13.0",
+        "datasets==2.15.0",
+        "pandas==2.1.3",
+        "pedata",
+        "gpytorch==1.11",
+        "numpy==1.26.2",
+        "torch==2.1.1",
+        "jax==0.4.23",
+        "scipy",
+        "scikit-learn==1.3.2",
+        "Bio==1.6.0",
+        "matplotlib",
+        "seaborn",
+]
+
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-html", "pytest-cov[all]", "interrogate"]
+lint = ["black"]
+doc = ["sphinx", "renku-sphinx-theme"]
+ci = ["pytest", "pytest-html", "pytest-cov", "interrogate", "black", "markdown"]
+
+#[project.scripts]
+#my-script = "my_package.module:function"
+
+# ... other project metadata fields as specified in:
+#     https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
